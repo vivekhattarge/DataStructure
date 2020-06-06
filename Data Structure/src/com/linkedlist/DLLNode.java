@@ -32,4 +32,5 @@ public class DLLNode {
     public void setNext(DLLNode next) {
         this.next = next;
     }
+
 }
