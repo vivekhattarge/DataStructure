@@ -19,6 +19,8 @@ public class GetCheapestHotel {
         LocalDate endDate = LocalDate.of(2020, 05, 31);
         String cheapestHotel = getCheapestHotel(startDate, endDate);
         System.out.println("Cheapest hotel is : " + cheapestHotel);
+
+
     }
 
     private static String getCheapestHotel(LocalDate startDate, LocalDate endDate) {
