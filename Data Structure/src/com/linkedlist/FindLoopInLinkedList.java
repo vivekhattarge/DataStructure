@@ -27,7 +27,9 @@ public class FindLoopInLinkedList {
         findLoopInLinkedList.push(30);
         findLoopInLinkedList.push(40);
 
-        findLoopInLinkedList.head.next.next = findLoopInLinkedList.head;
+     //   findLoopInLinkedList.head.next.next = findLoopInLinkedList.head.next;
+        int startingPointOfLoop = 2;
+        makeLoop(findLoopInLinkedList.head,startingPointOfLoop);
 
         if(findLoopInLinkedList.detectLoop()){
             Node startOfLoop = findLoopInLinkedList.findBeginOfLoop();
@@ -36,6 +38,26 @@ public class FindLoopInLinkedList {
             System.out.println("Loop not found");
         }
 
+    }
+
+    private static void makeLoop(Node head, int startingPointOfLoop) {
+
+        Node temp = head;
+        int count =1;
+        while (count < startingPointOfLoop) {
+            temp = temp.next;
+            count++;
+        }
+
+        //backup of loop point
+        Node backup = temp;
+
+        //traverse till end of linked list
+        while(temp.next != null){
+            temp = temp.next;
+        }
+
+        temp.next = backup;
     }
 
     //floyd cycle finding algorithm
