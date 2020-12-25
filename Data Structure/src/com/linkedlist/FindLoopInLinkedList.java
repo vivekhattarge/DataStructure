@@ -27,7 +27,6 @@ public class FindLoopInLinkedList {
         findLoopInLinkedList.push(30);
         findLoopInLinkedList.push(40);
 
-     //   findLoopInLinkedList.head.next.next = findLoopInLinkedList.head.next;
         int startingPointOfLoop = 2;
         makeLoop(findLoopInLinkedList.head,startingPointOfLoop);
 
