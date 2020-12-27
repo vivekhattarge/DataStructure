@@ -31,7 +31,9 @@ public class FindMiddleOfLinkedList {
         list.head.next = new FindMiddleOfLinkedList.Node(6);
         list.head.next.next = new FindMiddleOfLinkedList.Node(9);
         list.head.next.next.next = new FindMiddleOfLinkedList.Node(15);
-        list.head.next.next.next.next = new FindMiddleOfLinkedList.Node(30);
+        list.head.next.next.next.next = new FindMiddleOfLinkedList.Node(18);
+        list.head.next.next.next.next.next = new FindMiddleOfLinkedList.Node(21);
+        list.head.next.next.next.next.next.next = new FindMiddleOfLinkedList.Node(30);
 
         printSinglyLinkedList(list.head," ");
 
@@ -41,15 +43,13 @@ public class FindMiddleOfLinkedList {
     }
 
     private static Node getMiddleNode(Node head){
-
-        Node ptr1,ptr2;
-        ptr1 = ptr2 = head;
-
-        while(ptr1.next != null){
-            ptr1 = ptr1.next.next;
-            ptr2 = ptr2.next;
+        Node fastPtr,slowPtr;
+        fastPtr = slowPtr = head;
+        while(fastPtr != null && fastPtr.next != null){
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
         }
-        return  ptr2;
+        return  slowPtr;
     }
 
 }
