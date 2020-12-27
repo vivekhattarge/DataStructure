@@ -32,7 +32,7 @@ public class CheckWhetherLengthIsEvenOrOdd {
 
         printSinglyLinkedList(list.head," ");
 
-        Node resultNode = checkLengthIsevenOrOdd(list.head);
+        Node resultNode = checkWhetherLengthIsEvenOrOdd(list.head);
 
         if(resultNode == null){
             System.out.println("Linked list is even");
@@ -42,7 +42,7 @@ public class CheckWhetherLengthIsEvenOrOdd {
 
     }
 
-    static Node checkLengthIsevenOrOdd(Node head){
+    static Node checkWhetherLengthIsEvenOrOdd(Node head){
 
     while (head != null && head.next != null){
         head = head.next.next;
