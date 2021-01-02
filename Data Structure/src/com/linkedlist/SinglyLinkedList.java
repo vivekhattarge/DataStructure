@@ -150,7 +150,7 @@ public class SinglyLinkedList {
 
     @Override
     public String toString() {
-        return "LinkedList{" +
+        return "ReverseKNodesOfLinkedList{" +
                 "length=" + length +
                 ", head=" + head +
                 '}';
