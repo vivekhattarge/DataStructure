@@ -43,7 +43,7 @@ public class IsListPalindrome {
                 prevOfSlowPtr = slowPtr;
                 slowPtr = slowPtr.next;
             }
-            //if list is off then fastPtr will not be null
+            //if list is odd then fastPtr will not be null
             if(fastPtr != null){
                 midNode = slowPtr;
                 slowPtr = slowPtr.next;
@@ -116,14 +116,13 @@ public class IsListPalindrome {
         for (int i = 0; i < 7; i++) {
             llist.push(str[i]);
             llist.printList(llist.head);
-            if (llist.isPalindrome(llist.head) != false) {
+            if (llist.isPalindrome(llist.head)) {
                 System.out.println("Is Palindrome");
-                System.out.println("");
             }
             else {
                 System.out.println("Not Palindrome");
-                System.out.println("");
             }
+            System.out.println("");
         }
 
     }
