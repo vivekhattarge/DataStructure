@@ -35,6 +35,7 @@
 
 ## Plugin-specific files:
 
+
 # IntelliJ
 **/out/
 **/*.iml
