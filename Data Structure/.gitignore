@@ -111,3 +111,5 @@ Logs/
 **/node_modules
 **/bower_components
 
+/out/
+/.idea/
