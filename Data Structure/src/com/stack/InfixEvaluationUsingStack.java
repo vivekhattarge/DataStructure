@@ -2,7 +2,7 @@ package com.stack;
 
 import java.util.Stack;
 
-public class InfixEvaluation {
+public class InfixEvaluationUsingStack {
 
     public static void main(String[] args) {
 
