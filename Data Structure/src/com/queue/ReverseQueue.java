@@ -18,7 +18,7 @@ public class ReverseQueue {
         queue.add(60);
         System.out.println("before reverse : "+queue.toString());
         reverseQueue(queue);
-        System.out.println("before reverse : "+queue.toString());
+        System.out.println("after reverse : "+queue.toString());
 
     }
 
