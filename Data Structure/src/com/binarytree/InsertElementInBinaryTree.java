@@ -22,6 +22,16 @@ public class InsertElementInBinaryTree {
 
         System.out.println(root);
 
+        System.out.println("size of binary tree is : "+sizeOfBinaryTree(root));
+
+    }
+
+    private static Integer sizeOfBinaryTree(Node root) {
+
+        if(root == null){
+            return 0;
+        }
+        return (sizeOfBinaryTree(root.left) + 1 + sizeOfBinaryTree(root.right));
     }
 
     private static void insertNode(Node temp, int element) {
