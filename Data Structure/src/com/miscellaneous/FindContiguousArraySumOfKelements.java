@@ -1,4 +1,4 @@
-package com.dynamic.programming;
+package com.miscellaneous;
 
 import java.util.Arrays;
 
