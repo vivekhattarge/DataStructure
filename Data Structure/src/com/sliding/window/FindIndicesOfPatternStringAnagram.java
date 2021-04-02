@@ -1,4 +1,4 @@
-package com.miscellaneous;
+package com.sliding.window;
 
 import java.util.*;
 
