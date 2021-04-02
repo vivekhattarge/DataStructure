@@ -10,6 +10,7 @@ public class SquaringSortedArray {
         int [] resultArray = getSquaredArray(inputArray);
 
         System.out.println("squares is : "+ Arrays.toString(resultArray));
+
     }
 
     private static int[] getSquaredArray(int[] inputArray) {
