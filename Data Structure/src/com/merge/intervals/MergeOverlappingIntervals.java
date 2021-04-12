@@ -9,38 +9,38 @@ public class MergeOverlappingIntervals {
 
     public static void main(String[] args) {
 
-        List<Interval> input = new ArrayList<Interval>();
-        input.add(new Interval(1, 4));
-        input.add(new Interval(2, 5));
-        input.add(new Interval(7, 9));
+        List<InsertAndMergeInterval.Interval> input = new ArrayList<InsertAndMergeInterval.Interval>();
+        input.add(new InsertAndMergeInterval.Interval(1, 4));
+        input.add(new InsertAndMergeInterval.Interval(2, 5));
+        input.add(new InsertAndMergeInterval.Interval(7, 9));
         System.out.print("Merged intervals: ");
-        for (Interval interval : merge(input))
+        for (InsertAndMergeInterval.Interval interval : merge(input))
             System.out.print("[" + interval.start + "," + interval.end + "] ");
 
     }
 
-    private static List<Interval>  merge(List<Interval> intervals) {
-        List<Interval> mergedIntervals = new ArrayList<>();
+    private static List<InsertAndMergeInterval.Interval>  merge(List<InsertAndMergeInterval.Interval> intervals) {
+        List<InsertAndMergeInterval.Interval> mergedIntervals = new ArrayList<>();
 
         Collections.sort(intervals,(a,b) -> Integer.compare(a.start,b.start));
-        Iterator<Interval> intervalIterator = intervals.iterator();
+        Iterator<InsertAndMergeInterval.Interval> intervalIterator = intervals.iterator();
 
-        Interval firstInterval = intervalIterator.next();
+        InsertAndMergeInterval.Interval firstInterval = intervalIterator.next();
         int start = firstInterval.getStart();
         int end = firstInterval.getEnd();
 
         while(intervalIterator.hasNext()){
-            Interval interval = intervalIterator.next();
+            InsertAndMergeInterval.Interval interval = intervalIterator.next();
 
             if(interval.getStart() <= end){
                 end = Math.max(end,interval.getEnd());
             }else{
-                mergedIntervals.add(new Interval(start,end));
+                mergedIntervals.add(new InsertAndMergeInterval.Interval(start,end));
                 start = interval.getStart();
                 end = interval.getEnd();
             }
         }
-        mergedIntervals.add(new Interval(start,end));
+        mergedIntervals.add(new InsertAndMergeInterval.Interval(start,end));
         return mergedIntervals;
     }
 
