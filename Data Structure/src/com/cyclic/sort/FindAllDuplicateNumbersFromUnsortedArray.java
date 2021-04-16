@@ -1,8 +1,5 @@
 package com.cyclic.sort;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FindAllDuplicateNumbersFromUnsortedArray {
 
     public static void main(String[] args) {
