@@ -1,9 +1,6 @@
 package com.tree.bfs.level.order;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class LevelOrderTraversal {
 
@@ -19,7 +16,7 @@ public class LevelOrderTraversal {
         root.right.right = new TreeNode(5);
 
         List<List<Integer>> result = LevelOrderTraversal.traversal(root);
-
+        Collections.reverse(result);
         System.out.println("Level order traversal : " + result);
 
     }
