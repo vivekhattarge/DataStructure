@@ -39,7 +39,7 @@ public class EqualSubsetSumPartitionWithBottomUp {
         }
 
         // for first row
-        // when we have only one element then sum== value of number  then is can be formed as subset
+        // when we have only one element in set, then sum== value of number  then is can be formed as subset, so true else false
         for(int s=1;s<= sum; s++){
             dp[0][s] = nums[0] == s;
         }
