@@ -34,9 +34,11 @@ public class Knapsack_BottomUp_Memoization {
         for (int i = 0; i < n; i++) {
             for (int c = 1; c <= knapsackWeight; c++) {
                 int profit1 = 0, profit2 = 0;
+                //including current element
                 if (weights[i] <= c) {
                     profit1 = profits[i] + dp[i][c - weights[i]];
                 }
+                //excluding current element and copying element from above cell
                 if (i > 0) {
                     profit2 = dp[i - 1][c];
                 }

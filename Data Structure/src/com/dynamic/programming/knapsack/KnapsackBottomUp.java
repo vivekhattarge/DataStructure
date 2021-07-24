@@ -61,7 +61,7 @@ public class KnapsackBottomUp {
 
         for(int i = weights.length-1;i>0;i--){
 
-            if(dp[i-1][capacity] != totalProfit){
+            while(dp[i-1][capacity] != totalProfit){
                 System.out.print(" "+weights[i]);
                 capacity = capacity - weights[i];
                 totalProfit = totalProfit - profits[i];
