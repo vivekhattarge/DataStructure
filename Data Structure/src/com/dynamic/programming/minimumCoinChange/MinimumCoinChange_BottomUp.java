@@ -9,6 +9,7 @@ public class MinimumCoinChange_BottomUp {
         int[] denominations = {1, 2, 3};
         System.out.println("count of change  : " + minimumCoinChange.countChange(denominations, total));
 
+        
         denominations = new int[]{3, 5};
         System.out.println("count of change : "+minimumCoinChange.countChange(denominations, 7));
 
