@@ -24,9 +24,13 @@ public class CoinChange {
             return 0;
         }
         int sum1=0;
+
+        // by including denomination at currentindex
         if(denominations[currentIndex] <= total){
             sum1 = countChangeRecursive(denominations, total-denominations[currentIndex], currentIndex);
         }
+
+        // by excluding denomination at currentindex
         int sum2 = countChangeRecursive(denominations, total, currentIndex+1);
 
         return sum1+sum2;
