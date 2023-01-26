@@ -7,7 +7,7 @@ public class BackspaceCompare {
         String s1="xy#z";
         String s2="xzz#";
 
-        System.out.println("Given strings are "+(areStringsEqual(s1,s2) ? "equal" : "not equal"));
+        System.out.println("Given Strings are "+(areStringsEqual(s1,s2) ? "equal" : "not equal"));
 
     }
 
