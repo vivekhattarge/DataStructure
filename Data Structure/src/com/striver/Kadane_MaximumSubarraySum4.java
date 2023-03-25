@@ -31,8 +31,8 @@ public class Kadane_MaximumSubarraySum4 {
 
 //        int[] iparray = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 //        int[] iparray = {-2, -1,-4,-9};
-        int[] iparray = {-1,1,2,1};
-//        int[] iparray = {-2,-1};
+//        int[] iparray = {-1,1,2,1};
+        int[] iparray = {-2,-1};
 //        int[] iparray = {-1};
         int result = getMaximumSubarraySum(iparray);
         System.out.println("Result is  : " + result);
