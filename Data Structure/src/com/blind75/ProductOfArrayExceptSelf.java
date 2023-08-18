@@ -24,6 +24,7 @@ public class ProductOfArrayExceptSelf {
 
         }
 
+        //adding product of right elements
         int rightProducElement =1;
         for(int i = nums.length-2; i >= 0; i--){
 
