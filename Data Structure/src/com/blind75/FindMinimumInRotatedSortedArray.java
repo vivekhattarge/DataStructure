@@ -44,7 +44,8 @@ nums is sorted and rotated between 1 and n times.
 
 public class FindMinimumInRotatedSortedArray {
     public static void main(String[] args) {
-        int arr[] = {3,4,5,1,2};
+       // int arr[] = {3,4,5,1,2};
+        int arr[] = {5,2,3};
         int result = getMinimumElement(arr);
         System.out.println("Minimum number form array : "+result);
     }
