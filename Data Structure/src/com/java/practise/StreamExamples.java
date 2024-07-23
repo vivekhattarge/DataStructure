@@ -18,7 +18,9 @@ public class StreamExamples {
         employees.add(new Employee(5, "Vivek", 5));
         employees.add(new Employee(6, "William", 5));
 
-        int task = 2;
+        int task = 5;
+
+
         switch (task) {
             case 1:
                 // Example 1: Print the employee data using the stream
@@ -28,10 +30,40 @@ public class StreamExamples {
                 //Example 2: Print the employee data by sorting employee salaries in descending order.
                 printEmplyeesWithDescendingOrderOfTheirSalary(employees);
                 break;
+            case 3:
+                //Example 3: Filter the employee names starting with ‘J’
+                printEmplyeesStartsWithJ(employees);
+                break;
+            case 4:
+                //Example 4: Add 10000 to each employee’s salary and print
+                addAmountToAllEmpSalary(employees);
+                break;
+            case 5:
+                //Example 5: Return the employee object having max salary
+                printMaxSalaryEmployee(employees);
+                break;
             default:
                 printAllEmployees(employees);
 
         }
+    }
+
+    private static void printMaxSalaryEmployee(List<Employee> employees) {
+
+        Employee maxSalariedEmployee = employees.stream().reduce(((employee1, employee2) -> employee1.getEmpSalary() > employee2.getEmpSalary() ? employee1 : employee2)).get();
+        System.out.println(maxSalariedEmployee);
+    }
+
+    private static void addAmountToAllEmpSalary(List<Employee> employees) {
+
+        employees.forEach(employee -> employee.setEmpSalary(employee.getEmpSalary() + 10000));
+        employees.forEach(System.out::println);
+    }
+
+    private static void printEmplyeesStartsWithJ(List<Employee> employees) {
+        employees.stream()
+                .filter(employee -> employee.empName.startsWith("J"))
+                .forEach(System.out::println);
     }
 
     private static void printAllEmployees(List<Employee> employees) {
