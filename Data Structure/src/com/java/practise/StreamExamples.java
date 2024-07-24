@@ -1,10 +1,10 @@
 package com.java.practise;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.groupingBy;
 
 public class StreamExamples {
 
@@ -18,7 +18,7 @@ public class StreamExamples {
         employees.add(new Employee(5, "Vivek", 5));
         employees.add(new Employee(6, "William", 5));
 
-        int task = 5;
+        int task = 6;
 
 
         switch (task) {
@@ -42,10 +42,19 @@ public class StreamExamples {
                 //Example 5: Return the employee object having max salary
                 printMaxSalaryEmployee(employees);
                 break;
+            case 6:
+                //groupEmployeesByTheirSalaries
+                groupEmployeesBYTheirSalaries(employees);
+                break;
             default:
                 printAllEmployees(employees);
 
         }
+    }
+
+    private static void groupEmployeesBYTheirSalaries(List<Employee> employees) {
+        Map<Object, List<Employee>> employeesBySalaries =  employees.stream().collect(groupingBy(Employee::getEmpSalary));
+        System.out.println(employeesBySalaries);
     }
 
     private static void printMaxSalaryEmployee(List<Employee> employees) {
