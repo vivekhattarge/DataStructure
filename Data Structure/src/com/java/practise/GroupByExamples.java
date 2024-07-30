@@ -8,7 +8,7 @@ public class GroupByExamples {
 
     public static void main(String[] args) {
 
-        List<BlogPost> posts = new ArrayList<>();
+        List<BlogPost> posts;
 
         BlogPost post1 = new BlogPost("Mumbai", "John", BlogPostType.GUIDE, 5);
         BlogPost post2 = new BlogPost("Pune", "William", BlogPostType.NEWS, 7);
