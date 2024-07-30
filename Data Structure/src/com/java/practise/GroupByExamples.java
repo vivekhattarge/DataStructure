@@ -18,7 +18,7 @@ public class GroupByExamples {
 
         posts = Arrays.asList(post1, post2, post3, post4, post5);
 
-        int task = 5;
+        int task = 6;
 
         switch (task) {
             case 1:
@@ -45,9 +45,20 @@ public class GroupByExamples {
                 getBlogPostsWithMaxNumberOfLikes(posts);
                 break;
 
+            case 6:
+                //Group by name and get count of such elements
+                groupByNameAndGetCount(posts);
+                break;
+
             default:
                 printAllBlogPosts(posts);
         }
+    }
+
+    private static void groupByNameAndGetCount(List<BlogPost> posts) {
+
+    Map<String,Long> authorCount = posts.stream().collect(groupingBy(BlogPost::getAuthor, counting()));
+    System.out.println(authorCount);
     }
 
     private static void getBlogPostsWithMaxNumberOfLikes(List<BlogPost> posts) {
