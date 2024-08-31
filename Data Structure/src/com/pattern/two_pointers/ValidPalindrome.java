@@ -1,4 +1,4 @@
-package com.pattern;
+package com.pattern.two_pointers;
 
 public class ValidPalindrome {
     public static void main(String[] args) {
