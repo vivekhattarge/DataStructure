@@ -18,7 +18,7 @@ public class GroupByExamples {
 
         posts = Arrays.asList(post1, post2, post3, post4, post5);
 
-        int task = 5;
+        int task = 3;
 
         switch (task) {
             case 1:
@@ -63,8 +63,7 @@ public class GroupByExamples {
 
     private static void getBlogPostsWithMaxNumberOfLikes(List<BlogPost> posts) {
 
-    Map<BlogPostType, Optional<BlogPost>> postTypeByMaxLikes = posts.stream().collect(groupingBy(BlogPost::getType , maxBy(Comparator.comparingInt(BlogPost::getLikes) )) );
-
+    Map<BlogPostType, Optional<BlogPost>> postTypeByMaxLikes = posts.stream().collect(groupingBy(BlogPost::getType , maxBy(Comparator.comparingInt(BlogPost::getLikes))));
     System.out.println(postTypeByMaxLikes);
     }
 
@@ -76,7 +75,6 @@ public class GroupByExamples {
     private static void groupByFirstAuthorAndThenByType(List<BlogPost> posts) {
 
     Map<String,Map<BlogPostType,List<BlogPost>>> blogPostsByAuthor = posts.stream().collect(groupingBy(BlogPost::getAuthor,groupingBy(BlogPost::getType)));
-
     System.out.println(blogPostsByAuthor);
     }
 
