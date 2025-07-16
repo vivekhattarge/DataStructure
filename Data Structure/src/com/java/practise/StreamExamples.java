@@ -18,8 +18,7 @@ public class StreamExamples {
         employees.add(new Employee(5, "Vivek", 5));
         employees.add(new Employee(6, "William", 5));
 
-        int task = 6;
-
+        int task = 5;
 
         switch (task) {
             case 1:
@@ -48,7 +47,6 @@ public class StreamExamples {
                 break;
             default:
                 printAllEmployees(employees);
-
         }
     }
 
@@ -58,7 +56,6 @@ public class StreamExamples {
     }
 
     private static void printMaxSalaryEmployee(List<Employee> employees) {
-
         Employee maxSalariedEmployee = employees.stream().reduce(((employee1, employee2) -> employee1.getEmpSalary() > employee2.getEmpSalary() ? employee1 : employee2)).get();
         System.out.println(maxSalariedEmployee);
     }

@@ -18,7 +18,7 @@ public class GroupByExamples {
 
         posts = Arrays.asList(post1, post2, post3, post4, post5);
 
-        int task = 6;
+        int task = 5;
 
         switch (task) {
             case 1:
