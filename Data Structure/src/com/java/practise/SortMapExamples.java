@@ -39,7 +39,7 @@ public class SortMapExamples {
 
     private static void printEmployees(Map<Employee, Integer> employeeIntegerMap) {
         System.out.println("Print Employees");
-        employeeIntegerMap.entrySet().stream().forEach(System.out::println);
+        employeeIntegerMap.entrySet().forEach(System.out::println);
     }
 
     private static void sortMapByValueCustomClassType(Map<Employee, Integer> employeeIntegerMap) {
