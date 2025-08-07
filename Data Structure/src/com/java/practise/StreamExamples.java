@@ -1,7 +1,9 @@
 package com.java.practise;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.groupingBy;
@@ -18,7 +20,7 @@ public class StreamExamples {
         employees.add(new Employee(5, "Vivek", 5));
         employees.add(new Employee(6, "William", 5));
 
-        int task = 5;
+        int task = 7;
 
         switch (task) {
             case 1:
@@ -45,9 +47,25 @@ public class StreamExamples {
                 //groupEmployeesByTheirSalaries
                 groupEmployeesBYTheirSalaries(employees);
                 break;
+            case 7:
+                //find Nth highest salary
+                printNthHighestSalary(employees, 3);
+                break;
             default:
                 printAllEmployees(employees);
         }
+    }
+
+    private static void printNthHighestSalary(List<Employee> employees, int n) {
+
+    Map<Long,List<Employee>> salaryVsEmployees =  employees.stream().collect(Collectors.groupingBy(Employee::getEmpSalary));
+
+        Map.Entry<Long, List<Employee>> nthLastSalary = salaryVsEmployees.entrySet().stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByKey()))
+                .collect(Collectors.toList()).get(n - 1);
+
+        System.out.println(nthLastSalary.getKey()+ " "+nthLastSalary.getValue().get(0).getEmpName());
+
     }
 
     private static void groupEmployeesBYTheirSalaries(List<Employee> employees) {
