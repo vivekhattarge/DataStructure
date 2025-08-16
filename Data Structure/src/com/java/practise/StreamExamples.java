@@ -63,9 +63,7 @@ public class StreamExamples {
         Map.Entry<Long, List<Employee>> nthLastSalary = salaryVsEmployees.entrySet().stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByKey()))
                 .collect(Collectors.toList()).get(n - 1);
-
         System.out.println(nthLastSalary.getKey()+ " "+nthLastSalary.getValue().get(0).getEmpName());
-
     }
 
     private static void groupEmployeesBYTheirSalaries(List<Employee> employees) {
