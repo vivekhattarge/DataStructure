@@ -34,7 +34,6 @@ public class EmployeeSendReminder {
                     System.out.println("send email  : " + Thread.currentThread().getName());
                     emails.forEach(EmployeeSendReminder::sendEmail);
                 });
-
         return completableFuture;
     }
 
